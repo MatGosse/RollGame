@@ -2,6 +2,7 @@ var activeplayer = 1;
 function switchplayer(){
     if(activeplayer===1){
         activeplayer++;
+        document.getElementById('playerdots2').style.opacity = "1";
     }else{
         activeplayer--;
     }

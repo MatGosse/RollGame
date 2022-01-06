@@ -11,21 +11,60 @@
     </head>
     <body>
         <section id="player1">
-            <h2>joueur 1</h2>
+            <h2>joueur 1<span class="playerdots1"></span></h2>
             <input class="globalscore" name="global_score_player_one" type="number" disabled="disabled" value='0'>
             <div class="current">
                 <label for="current_score_player_one">En cours</label>
                 <input name="current_score_player_one" type="number" disabled="disabled" value='0'>
             </div>
         </section>
+        <div class="dice-container">
+            <div id="cube">
+                <div class="front">
+                  <span class="dot dot1"></span>
+                </div>
+                <div class="back">
+                    <span class="dot dot1"></span>
+                    <span class="dot dot2"></span>  
+                    <span class="dot dot3"></span>
+                    <span class="dot dot4"></span>
+                    <span class="dot dot5"></span>
+                    <span class="dot dot6"></span>
+                </div>
+                <div class="right">
+                  <span class="dot dot1"></span>
+                  <span class="dot dot2"></span>  
+                  <span class="dot dot3"></span>
+                </div>
+                <div class="left">
+                  <span class="dot dot1"></span>
+                  <span class="dot dot2"></span>  
+                  <span class="dot dot3"></span>
+                  <span class="dot dot4"></span>
+                </div>
+                <div class="top">
+                    <span class="dot dot1"></span>
+                    <span class="dot dot2"></span>  
+                    <span class="dot dot3"></span>
+                    <span class="dot dot4"></span>
+                    <span class="dot dot5"></span>
+                </div>
+                <div class="bottom">
+                    <span class="dot dot1"></span>
+                    <span class="dot dot2"></span>  
+                </div>
+              </div>
+            
+        </div>
         <section id="player2">
-            <h2>joueur 2</h2>
+            <h2>joueur 2<span class="playerdots2"></span></h2>
             <input class="globalscore" name="global_score_player_two" type="number" disabled="disabled" value='0'>
             <div class="current">
                 <label for="current_score_player_two">En cours</label>
                 <input name="current_score_player_two" type="number" disabled="disabled" value='0'>
             </div>
         </section>
+        
         <div class="control">
             <button onclick="play()" id="continue"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><g><path d="M6,13c0-1.65,0.67-3.15,1.76-4.24L6.34,7.34C4.9,8.79,4,10.79,4,13c0,4.08,3.05,7.44,7,7.93v-2.02 C8.17,18.43,6,15.97,6,13z M20,13c0-4.42-3.58-8-8-8c-0.06,0-0.12,0.01-0.18,0.01l1.09-1.09L11.5,2.5L8,6l3.5,3.5l1.41-1.41 l-1.08-1.08C11.89,7.01,11.95,7,12,7c3.31,0,6,2.69,6,6c0,2.97-2.17,5.43-5,5.91v2.02C16.95,20.44,20,17.08,20,13z"/></g></g></svg>Roll</button>
             <button onclick="save()"id="stop"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>Hold</button> 
