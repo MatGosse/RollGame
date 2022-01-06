@@ -1,15 +1,26 @@
-var activeplayer = 1; 
+var activeplayer = 1;
 document.getElementById('playerdots'+ activeplayer).style.opacity="1";
 
 function switchplayer(){
     document.getElementById('playerdots'+ activeplayer).style.opacity="0";
     if(activeplayer===1){
         activeplayer++;
-
     }else{
         activeplayer--;
     }
     document.getElementById('playerdots'+ activeplayer).style.opacity="1";
+    
+    if(window.innerWidth<window.innerHeight && activeplayer===1){
+        window.scroll({
+            top: 0, 
+            behavior: 'smooth'
+        });
+    }else if(window.innerWidth<window.innerHeight && activeplayer===2){
+        window.scroll({
+            top: window.innerHeight, 
+            behavior: 'smooth'
+        });
+    }
     
 }
 function play(){
@@ -22,7 +33,6 @@ function play(){
         var curentscore = parseInt(curentscorescreen.value);
     }
     var scoreRoll = Math.floor(Math.random()*6)+1;
-    console.log(scoreRoll);
     switch(scoreRoll){
         case 1:
             document.getElementById('cube').style.transform="rotate(0deg)";
