@@ -1,14 +1,19 @@
 var activeplayer = 1; 
+document.getElementById('playerdots'+ activeplayer).style.opacity="1";
+
 function switchplayer(){
+    document.getElementById('playerdots'+ activeplayer).style.opacity="0";
     if(activeplayer===1){
         activeplayer++;
-        document.getElementById('playerdots2').style.opacity = "1";
+
     }else{
         activeplayer--;
     }
-    console.log('le joueur actif est' + activeplayer);
+    document.getElementById('playerdots'+ activeplayer).style.opacity="1";
+    
 }
 function play(){
+
     if(activeplayer===1){
         var curentscorescreen = document.querySelector('input[name="current_score_player_one"]');
         var curentscore = parseInt(curentscorescreen.value);
@@ -17,6 +22,27 @@ function play(){
         var curentscore = parseInt(curentscorescreen.value);
     }
     var scoreRoll = Math.floor(Math.random()*6)+1;
+    console.log(scoreRoll);
+    switch(scoreRoll){
+        case 1:
+            document.getElementById('cube').style.transform="rotate(0deg)";
+            break;
+        case 2:
+            document.getElementById('cube').style.transform="rotateX(90deg)";
+            break;
+        case 3:
+            document.getElementById('cube').style.transform="rotateY(-90deg)";
+            break;
+        case 4:
+            document.getElementById('cube').style.transform="rotateY(90deg)";
+            break;
+        case 5:
+            document.getElementById('cube').style.transform="rotateX(-90deg)";
+            break;
+        case 6:
+            document.getElementById('cube').style.transform="rotateX(180deg)";
+            break;
+    }
     if(scoreRoll===1){
         curentscore=0;
         curentscorescreen.value = 0;
@@ -41,18 +67,23 @@ function save(){
 
     if(curentscore != 0){
         globalscore += curentscore;
-        if(globalscore<99){
+        if(globalscore<100){
             globalscorescreen.value = globalscore;
             curentscore=0;
             curentscorescreen.value = 0;
-        }else if(globalscore===100){
+        }else if(globalscore>=100){
             victory() 
-        }else{
-            curentscorescreen.value = 0;
         }
         switchplayer();
     }
 }
 function victory(){
     alert('Joueur ' + activeplayer + ' gagne la partie!');
+    reset()
+}
+function reset(){
+    document.querySelector('input[name="current_score_player_two"]').value = 0;
+    document.querySelector('input[name="current_score_player_one"]').value = 0;
+    document.querySelector('input[name="global_score_player_one"]').value = 0;
+    document.querySelector('input[name="global_score_player_two"]').value = 0;
 }
