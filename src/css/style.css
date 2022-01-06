@@ -7,36 +7,91 @@ body{
     align-items: center;
     justify-content: center;
     font-family: 'Lato', sans-serif;
+    color: black;
 }
 
 /*gestion section*/
 section{
     position: relative;
-    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 #player1{
-    background-color: #e9ecf2;
+    background-color: #f7f7f7;
 }
 .control, #reset{
-    position: absolute;
-}
-.control{
-    bottom: 20%;
-}#reset{
-    top: 10%;
+    position: fixed;
 }
 /*gestion score*/
-input{
+h2,.globalscore{
+    font-size: 50px;
+}
+.globalscore{
+    margin-bottom: 200px;
+}
+input,button{
     text-align: center;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     background-color: rgba(0, 0, 0, 0);
 }
 .current{
-    color: white;
+    text-align: center;
     background-color: #ea4d4c;
+    width: 150px;
+    padding-top: 5px;
+}
+.current input{
+    color: white;
+    margin: 10px 0px;
+    width: 100%;
+    font-size: 30px;
+}
+
+/*gestion control*/
+svg{
+    fill:#ea4d4c;
+    margin-right: 2.5px;
+}
+#reset,button{
+    transition: 0.5s;
+    font-size: 20px;
+}
+#stop svg{
+    transform: rotate(90deg);
+}
+#reset:hover ,button:hover{
+    color: #ea4d4c;
+    text-decoration: underline;
+
+}
+@media (orientation: portrait){
+    body{
+        flex-direction: column;
+    }
+    section{
+        width: 100%;
+    }
+    .control{
+        top: 10px;
+    }
+    #reset{
+        margin-top: -200px;
+        bottom: 0px;
+    }
+}
+@media (orientation: landscape){
+    section{
+        width: 50%;
+    }
+    .control{
+        bottom: 20%;
+    }
+    #reset{
+        top: 10%;
+    }
 }
